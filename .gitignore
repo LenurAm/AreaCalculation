@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/AreaCalculation/Pages/Index.razor
+/AreaCalculation/Pages/Triangle.razor
