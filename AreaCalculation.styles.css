@@ -1,3 +1,68 @@
+/* /Pages/Triangle.razor.rz.scp.css */
+.box_1[b-hcg31driki] {
+    width: 50px;
+    height: 50px;
+    margin: 100px auto;
+}
+
+.box_1[b-hcg31driki] {
+    border-top: 5px solid red;
+    border-right: 5px solid lime;
+    border-bottom: 5px solid blue;
+    border-left: 5px solid yellow;
+}
+
+.box_2[b-hcg31driki] {
+    width: 50px;
+    height: 50px;
+    margin: 100px auto;
+}
+
+.box_2[b-hcg31driki] {
+    border-top: 60px solid red;
+    border-right: 60px solid lime;
+    border-bottom: 60px solid blue;
+    border-left: 60px solid yellow;
+}
+
+.box_3[b-hcg31driki] {
+    width: 0;
+    height: 0;
+    margin: 100px auto;
+}
+
+.box_3[b-hcg31driki] {
+    border-top: 60px solid red;
+    border-right: 60px solid lime;
+    border-bottom: 60px solid blue;
+    border-left: 60px solid yellow;
+}
+
+.box_4[b-hcg31driki] {
+    width: 0;
+    height: 0;
+    margin: 100px auto;
+}
+
+.box_4[b-hcg31driki] {
+    border-top: 60px solid red;
+    border-right: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid transparent;
+}
+
+.box_5[b-hcg31driki] {
+    width: 0;
+    height: 0;
+    margin: 100px auto;
+}
+
+.box_5[b-hcg31driki] {
+    border-top: 120px solid red;
+    border-right: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid transparent;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-h901d1om0h] {
     position: relative;
