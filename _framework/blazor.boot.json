@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "AreaCalculation.dll": "sha256-sgtHbshzGM30YgQi\/AcpCNHFIO63sgyhAtSQ\/+fr5sw=",
+      "AreaCalculation.dll": "sha256-31xwTg3KwP9rZ\/tbNoTWPhFHDZebQB8fzgMS1VtmbNQ=",
       "Figures.dll": "sha256-okEbskmC9jLDnbIyd3uqK2tZFOuRm0N1tFpmse\/9oLs=",
       "Microsoft.AspNetCore.Components.dll": "sha256-GN9rRLq1ddQ2D77XA54poUYEGFmUbGeq\/XNtr726p8g=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-TkxggOoyqQ6pYTxOc1u0cRSaxwlfqq8Rk\/FeJoQ3jmU=",
