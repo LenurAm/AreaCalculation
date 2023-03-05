@@ -11,7 +11,7 @@ namespace Figures.Contracts
         //int[] Sides { get; set; }
         int NumberOfSides(int[] Sides);
 
-        int Area(int[] Sides);
+        double Area(int[] Sides);
 
     }
 }

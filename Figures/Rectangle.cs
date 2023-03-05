@@ -11,21 +11,33 @@ namespace Figures
 {
 	public class Rectangle : IRectangle
 	{
-		
-		//int[] IFigure.Sides { get => throw new NotImplementedException(); }
+		public int x;
+		public int y;
+		public int[] sides;
 
-		
 
-		public int Area(int[] Sides)
+
+		public int[] GetSides(int x, int y)
 		{
-			throw new NotImplementedException();
+
+			sides[0] = x;
+			sides[1] = y;
+			return sides;
+		}
+
+
+
+
+		public double Area(int[] sides)
+		{
+			return sides[0] * sides[1];
 		}
 
 		
 
 		public int NumberOfSides(int[] Sides)
 		{
-			throw new NotImplementedException();
+			return sides.Length;
 		}
 	}
 }

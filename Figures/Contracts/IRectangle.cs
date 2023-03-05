@@ -8,6 +8,6 @@ namespace Figures.Contracts
 {
 	public interface IRectangle:IFigure
 	{
-
+		int[] GetSides(int x, int y);
 	}
 }

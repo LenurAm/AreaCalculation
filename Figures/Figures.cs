@@ -9,12 +9,12 @@ namespace Figures
 {
 	public static class Figures
 	{
-		//public int[] sides { get; set; }
+		
 		public static Triangle GetTriangle(/*int[]sides*/)
 		{
 			return new Triangle();
 		}
-		public static Rectangle GetRectangle(int x, int y)
+		public static Rectangle GetRectangle()
 		{
 			return new Rectangle();
 		}

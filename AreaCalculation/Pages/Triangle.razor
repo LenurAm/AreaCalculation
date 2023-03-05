@@ -9,20 +9,25 @@
 }
 <h2>Triangle</h2>
 <br />
+<div>
+	
+	
+	<div class="box_5"></div> 
+</div>
 <div class="row">
 	<div class="col-6 border p-3">
 		<div>
 			
-			X:<input type="number" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
+			X:<input type="number" style="width:100px" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
 		</div>
 		<br />
 		<div>
-			Y:<input type="number" @bind-value=@sides[1] @bind-value:event="oninput" /><br />
+			Y:<input type="number" style="width:100px" @bind-value=@sides[1] @bind-value:event="oninput" /><br />
 
 		</div>
 		<br />
 		<div>
-			Z:<input type="number" @bind-value=@sides[2] @bind-value:event="oninput" /><br />
+			Z:<input type="number" style="width:100px" @bind-value=@sides[2] @bind-value:event="oninput" /><br />
 
 		</div>
 	</div>
@@ -30,31 +35,26 @@
 		
 		<button class="btn btn-success" @onclick="CheckTriangle">
 		<b>Calculate triangle area</b></button>
-		<div>Is triangle created?:<br />
+		<div>Is that possible to create a triangle by given sides?:<br />
 			<p class="status">@message</p>
-			
-			</div>
+		</div>
 		
-			
-		<br/>
 		<p role="status">Triangle area:@message1</p>
-
+		<p role="status">Has a triangle have a right corner?:<br />@message2 </p>
 		
-
-		
-
 	</div>
+	
 </div>
 @code {
 
 
-	private int x { get; set; } =7;
-	private int y=5;
-	private int z=6;
-	private int area = 1;
+	
+	private double area = 1;
 	private int[] sides = new int[3] { 7, 5, 6 };
 	string message="";
 	string message1
+	= "";
+	string message2
 	= "";
 	ITriangle triangle = Figures.GetTriangle();
 	public bool CreateTriangle()
@@ -62,7 +62,7 @@
 		if((sides[0]==0)&&(sides[1]==0)
 				&&(sides[1]==0))
 		{
-			sides = triangle.GetSides(x, y, z);
+			
 			return false;
 		}
 
@@ -81,11 +81,24 @@
 
 		}
 	}
-	public int CalculateArea()
+	public double CalculateArea()
 	{
 		area = triangle.Area(sides);
 		Console.WriteLine(area);
 		return area;
+	}
+	public bool IsTriangleRight()
+	{
+		if (triangle.IsTriangleRight(sides))
+		{
+
+			return true;
+		}
+		else
+		{
+			
+			return false;
+		}
 	}
 	public void CheckTriangle()
 	{ 
@@ -105,6 +118,14 @@
 		else
 		{
 			message1 = "Calculation unavailable!";
+		}
+		if (IsTriangleRight())
+		{
+			message2 = "Triangle has a right corner";
+		}
+		else
+		{
+			message2 = "Triangle doesn't have a right corner";
 		}
 	}
 

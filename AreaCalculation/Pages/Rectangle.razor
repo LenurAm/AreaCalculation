@@ -1,0 +1,75 @@
+﻿@page "/rectangle"
+@using Figures.Contracts;
+@using Figures;
+
+<h2>Rectangle</h2>
+
+<div class="row">
+	<div class="col-6 border p-3">
+		<div>
+
+			X:<input type="number" style="width:100px" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
+		</div>
+		<br />
+		<div>
+			Y:<input type="number" style="width:100px" @bind-value=@sides[1] @bind-value:event="oninput" /><br />
+
+		</div>
+		<br />
+		
+	</div>
+	<div class="col-6 border p-3">
+
+		<button class="btn btn-success" @onclick="CalculateRectangle">
+			<b>Calculate rectangle area</b>
+		</button>
+		<br />
+		<br />
+
+		<p role="status">Rectangle area:<br />@message</p>
+		
+
+	</div>
+
+</div>
+
+@code {
+
+	
+
+	private double area = 1;
+	private int[] sides = new int[2] { 7, 5 };
+	string message = "";
+
+	IRectangle rectangle = Figures.GetRectangle();
+	public bool CreateRectangle()
+	{
+		if ((sides[0] == 0) && (sides[1] == 0))
+		{
+			
+			return false;
+		}
+
+		return true;
+	}
+	public double CalculateArea()
+	{
+		area = rectangle.Area(sides);
+		Console.WriteLine(area);
+		return area;
+	}
+	
+	public void CalculateRectangle()
+	{
+		bool result = CreateRectangle();
+		if (CalculateArea() > 0)
+		{
+			message = area.ToString();
+		}
+		else
+		{
+			message = "Calculation unavailable!";
+		}
+		
+	}
+}

@@ -28,11 +28,11 @@ namespace Figures
 			return sides;
 		}
 		
-        public int Area(int[]sides)
+        public double Area(int[]sides)
 		{
 			int semi = ((sides[0] + sides[1] + sides[2]) / 2);
 
-			return (int)(Math.Sqrt(semi * (semi - sides[0]) * (semi - sides[1]) * (semi - sides[2])));
+			return Math.Sqrt(semi * (semi - sides[0]) * (semi - sides[1]) * (semi - sides[2]));
 		}
 				
 		public bool IsTriangle(int[] Sides)
