@@ -1,68 +1,199 @@
+@import '_content/Blazored.Toast/Blazored.Toast.bundle.scp.css';
+
+/* /Pages/Rectangle.razor.rz.scp.css */
+#myImg[b-5ufbd2scy1] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #myImg:hover[b-5ufbd2scy1] {
+        opacity: 0.7;
+    }
+
+#myImg[b-5ufbd2scy1] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #myImg:hover[b-5ufbd2scy1] {
+        opacity: 0.7;
+    }
+
+/* The Modal (background) */
+.modal[b-5ufbd2scy1] {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content[b-5ufbd2scy1] {
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width: 700px;
+}
+
+
+/* Caption of Modal Image */
+#caption[b-5ufbd2scy1] {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content[b-5ufbd2scy1], #caption[b-5ufbd2scy1] {
+    animation-name: zoom-b-5ufbd2scy1;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom-b-5ufbd2scy1 {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close[b-5ufbd2scy1] {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .close:hover[b-5ufbd2scy1],
+    .close:focus[b-5ufbd2scy1] {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content[b-5ufbd2scy1] {
+        width: 100%;
+    }
+}
 /* /Pages/Triangle.razor.rz.scp.css */
-.box_1[b-hcg31driki] {
-    width: 50px;
-    height: 50px;
-    margin: 100px auto;
+#myImg[b-hcg31driki] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.box_1[b-hcg31driki] {
-    border-top: 5px solid red;
-    border-right: 5px solid lime;
-    border-bottom: 5px solid blue;
-    border-left: 5px solid yellow;
+    #myImg:hover[b-hcg31driki] {
+        opacity: 0.7;
+    }
+#myImg[b-hcg31driki] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.box_2[b-hcg31driki] {
-    width: 50px;
-    height: 50px;
-    margin: 100px auto;
+    #myImg:hover[b-hcg31driki] {
+        opacity: 0.7;
+    }
+
+/* The Modal (background) */
+.modal[b-hcg31driki] {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-.box_2[b-hcg31driki] {
-    border-top: 60px solid red;
-    border-right: 60px solid lime;
-    border-bottom: 60px solid blue;
-    border-left: 60px solid yellow;
+/* Modal Content (image) */
+.modal-content[b-hcg31driki] {
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width: 700px;
 }
 
-.box_3[b-hcg31driki] {
-    width: 0;
-    height: 0;
-    margin: 100px auto;
+
+/* Caption of Modal Image */
+#caption[b-hcg31driki] {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
 }
 
-.box_3[b-hcg31driki] {
-    border-top: 60px solid red;
-    border-right: 60px solid lime;
-    border-bottom: 60px solid blue;
-    border-left: 60px solid yellow;
+/* Add Animation */
+.modal-content[b-hcg31driki], #caption[b-hcg31driki] {
+    animation-name: zoom-b-hcg31driki;
+    animation-duration: 0.6s;
 }
 
-.box_4[b-hcg31driki] {
-    width: 0;
-    height: 0;
-    margin: 100px auto;
+@keyframes zoom-b-hcg31driki {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
-.box_4[b-hcg31driki] {
-    border-top: 60px solid red;
-    border-right: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 60px solid transparent;
+/* The Close Button */
+.close[b-hcg31driki] {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.box_5[b-hcg31driki] {
-    width: 0;
-    height: 0;
-    margin: 100px auto;
+    .close:hover[b-hcg31driki],
+    .close:focus[b-hcg31driki] {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content[b-hcg31driki] {
+        width: 100%;
+    }
 }
 
-.box_5[b-hcg31driki] {
-    border-top: 120px solid red;
-    border-right: 60px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 60px solid transparent;
-}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-h901d1om0h] {
     position: relative;
