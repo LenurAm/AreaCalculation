@@ -1,9 +1,22 @@
 ﻿@page "/rectangle"
-@using Figures.Contracts;
-@using Figures;
+@inject IToastService toastService
+
 
 <h2>Rectangle</h2>
 
+<button @onclick="changeImg">
+	<img id="myImg" class="img-fluid img-thumbnail" src="/Image/rectangle.jpg" alt="Rectangle" width="300" height="200">
+	
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+		<div id="caption"></div>
+	</div>
+</button>
+<br />
+<br />
+<br />
 <div class="row">
 	<div class="col-6 border p-3">
 		<div>
@@ -35,7 +48,9 @@
 
 @code {
 
-	
+
+	[Inject]
+	public IJSRuntime Js { get; set; }
 
 	private double area = 1;
 	private int[] sides = new int[2] { 7, 5 };
@@ -65,11 +80,17 @@
 		if (CalculateArea() > 0)
 		{
 			message = area.ToString();
+			toastService.ShowSuccess("Rectangle successfully created! Get the area!");
 		}
 		else
 		{
 			message = "Calculation unavailable!";
+			toastService.ShowError("Rectangle Faulty! Change sides sizes! At least one side is equal zero!");
 		}
 		
+	}
+	private async Task changeImg()
+	{
+		await Js.InvokeVoidAsync("changeImg");
 	}
 }

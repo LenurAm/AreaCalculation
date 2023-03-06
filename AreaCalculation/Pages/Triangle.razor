@@ -1,6 +1,5 @@
 ﻿@page "/triangle"
-@using Figures.Contracts;
-@using Figures;
+@inject IToastService toastService
 
 @if(triangle == null)
 {
@@ -9,37 +8,48 @@
 }
 <h2>Triangle</h2>
 <br />
-<div>
+<button @onclick="changeImg">
+	<img id="myImg" class="img-fluid img-thumbnail" src="/Image/triangle.jpg" alt="Triangle" width="300" height="200">
 	
-	
-	<div class="box_5"></div> 
-</div>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+		<div id="caption"></div>
+	</div>
+</button>
+<br />
+<br />
+<br />
 <div class="row">
 	<div class="col-6 border p-3">
 		<div>
 			
 			X:<input type="number" style="width:100px" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
 		</div>
-		<br />
+		<br /><br /><br />
 		<div>
 			Y:<input type="number" style="width:100px" @bind-value=@sides[1] @bind-value:event="oninput" /><br />
 
 		</div>
-		<br />
+		<br /><br /><br />
 		<div>
 			Z:<input type="number" style="width:100px" @bind-value=@sides[2] @bind-value:event="oninput" /><br />
 
 		</div>
+		<br /><br />
 	</div>
 	<div class="col-6 border p-3">
 		
 		<button class="btn btn-success" @onclick="CheckTriangle">
 		<b>Calculate triangle area</b></button>
+		<br /><br />
 		<div>Is that possible to create a triangle by given sides?:<br />
 			<p class="status">@message</p>
 		</div>
-		
+		<br /><br />
 		<p role="status">Triangle area:@message1</p>
+		<br /><br />
 		<p role="status">Has a triangle have a right corner?:<br />@message2 </p>
 		
 	</div>
@@ -47,8 +57,9 @@
 </div>
 @code {
 
+	[Inject]
+	public IJSRuntime Js { get; set; }
 
-	
 	private double area = 1;
 	private int[] sides = new int[3] { 7, 5, 6 };
 	string message="";
@@ -62,7 +73,7 @@
 		if((sides[0]==0)&&(sides[1]==0)
 				&&(sides[1]==0))
 		{
-			
+
 			return false;
 		}
 
@@ -83,7 +94,7 @@
 	}
 	public double CalculateArea()
 	{
-		area = triangle.Area(sides);
+		area = Math.Round(triangle.Area(sides),2);
 		Console.WriteLine(area);
 		return area;
 	}
@@ -96,7 +107,7 @@
 		}
 		else
 		{
-			
+
 			return false;
 		}
 	}
@@ -106,14 +117,17 @@
 		if (result)
 		{
 			message = "Triangle created!";
+
 		}
 		else
 		{
 			message = "Checked sides! Creation failed";
+			toastService.ShowError("Triangle Creation Fault! Change sides sizes!");
 		}
-		if (CalculateArea() > 0)
+		if ((CalculateArea() > 0) && (result))
 		{
 			message1 = area.ToString();
+			toastService.ShowSuccess("Triangle successfully created! Get the area!");
 		}
 		else
 		{
@@ -127,10 +141,12 @@
 		{
 			message2 = "Triangle doesn't have a right corner";
 		}
+
+	}
+	private async Task changeImg()
+	{
+		await Js.InvokeVoidAsync("changeImg");
 	}
 
 	
-
-	
-
 }
