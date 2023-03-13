@@ -1,0 +1,126 @@
+﻿<div class="container send-email">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <EditForm class="form-contact" Model="@contact" OnValidSubmit="@HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <div class="form-group">
+                    <InputText class="form-control" placeholder="Name" @bind-Value="contact.Name" />
+                </div>
+                <div class="form-group">
+                    <InputText class="form-control" placeholder="Email" @bind-Value="contact.Email" />
+                </div>
+                <div class="form-group position-relative">
+                    <InputTextArea class="form-control" placeholder="Message"
+                                   @bind-Value="contact.Message" />
+                </div>
+                <div>
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <p>@message</p>
+                    }
+                    <button type="submit" class="button">Send email</button>
+                </div>
+            </EditForm>
+            <br />
+            <button class="btn btn-success" @onclick="(()=>SendLocalEmail(toEmailAddress,subject,body))">
+                Contact me
+            </button>
+        </div>
+    </div>
+</div>
+
+@inject EmailService EmailService
+@code {
+    private string message = string.Empty;
+    private Contact contact = new Contact();
+    [Inject]
+    public IJSRuntime JsRuntime { get; set; }
+
+    string toEmailAddress = "evulet2.08@gmail.com";
+    string subject = "sfdogihj";
+    string body = "asdfjpajef";
+    private async Task HandleValidSubmit()
+    {
+        //bool response = await EmailService.SendEmail(contact);
+
+        //var response = SendEmail1();
+
+        //if (response!=null)
+        //{
+        //    message = "Message sent!";
+
+        //}
+        //else
+        //{
+        //    message = "There was an error sending the message";
+        //}
+        
+        subject = contact.Name;
+        body = contact.Message;
+        bool response =await SendLocalEmail(toEmailAddress, subject, body);
+        if (response)
+        {
+            message = "Message sent!";
+
+        }
+        else
+        {
+            message = "There was an error sending the message";
+        }
+
+    }
+    private string sendStatus = "";
+    private async Task SendEmail1()
+    {
+        var apiKey = "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";
+        var client = new HttpClient();
+        client.DefaultRequestHeaders.Add("api-key", apiKey);
+
+        var data = new
+
+        {
+            //to = new[] { new { email = "evulet2.08@gmail.com" } },
+            //sender = contact.Name,
+            //subject = contact.Email,
+            //htmlContent = contact.Message
+            to = new[] { new { email = "evulet2.08@gmail.com" } },
+            sender = new { email = contact.Email },
+            subject = contact.Name,
+            htmlContent = contact.Message
+        };
+
+        var json = JsonConvert.SerializeObject(data);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = await client.PostAsync("https://api.sendinblue.com/v3/smtp/email", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            sendStatus = "Email sent successfully";
+            message = "Message sent!";
+        }
+        else
+        {
+            sendStatus = "Error sending email: " + await response.Content.ReadAsStringAsync();
+            message = "There was an error sending the message";
+        }
+
+    }
+    protected async Task<bool> SendLocalEmail(string toEmailAddress,string subject,string body)
+    {
+        Object[] obj = new Object[3] { toEmailAddress, subject, body };
+
+        await JsRuntime.InvokeAsync<object>("blazorExtensions.SendLocalEmail", obj);
+        //await JsRuntime.InvokeVoidAsync("blazorExtensions.SendLocalEmail");
+        Console.WriteLine("Sent");
+        return true;
+
+    }
+   
+}
+    
+    

@@ -1,6 +1,12 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
 
 
+@if (sendStatus == null)
+{
+	<DisplaySpinner></DisplaySpinner>
+
+}
 <PageTitle>Index</PageTitle>
 
 <h1>Dear visitor,</h1>
@@ -21,3 +27,57 @@
 	<hr />
 	<p>Feel free to contact me with any questions about the app</p>
 </div>
+
+<button class="btn btn-success" @onclick="(()=>SendLocalEmail())">
+	Contact me</button>
+
+<br />
+<br />
+
+<Animate Animation="Animations.ZoomIn" DurationMs=1000>
+    <p>
+        Lorem ipsum dolor sit amet 
+    </p>
+</Animate>
+<SendEmail />
+
+
+
+@code{
+
+
+	private string sendStatus = "  ";
+
+	private async void SendEmail()
+	{
+		var apiKey = "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";
+		var client = new HttpClient();
+		client.DefaultRequestHeaders.Add("api-key", apiKey);
+
+		var data = new
+		{
+			to = new[] { new { email = "evulet2.08@gmail.com" } },
+			sender = new { email = "evulet2.08@gmail.com" },
+			subject = "Hello Amar",
+			htmlContent = "<p>Hello Amar</p>"
+		};
+
+		var json = JsonConvert.SerializeObject(data);
+		var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+		var response = await client.PostAsync("https://api.sendinblue.com/v3/smtp/email", content);
+
+		if (response.IsSuccessStatusCode)
+		{
+			sendStatus = "Email sent successfully";
+		}
+		else
+		{
+			sendStatus = "Error sending email: " + await response.Content.ReadAsStringAsync();
+		}
+	}
+	private async Task SendLocalEmail()
+	{
+		
+	}
+}

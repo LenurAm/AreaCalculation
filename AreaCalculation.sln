@@ -4,8 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33006.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreaCalculation", "AreaCalculation\AreaCalculation.csproj", "{F509A944-2274-48A4-80CF-7428622E8F7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B65FF783-D238-4207-8E6D-B1B3677224B2} = {B65FF783-D238-4207-8E6D-B1B3677224B2}
+		{FF063842-1C52-4F48-9FBD-E7EE73B4F340} = {FF063842-1C52-4F48-9FBD-E7EE73B4F340}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Figures", "Figures\Figures.csproj", "{7F5686BB-47D5-439D-B28E-3D705FE16B16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreaCalculation.API", "AreaCalculation.API\AreaCalculation.API.csproj", "{FF063842-1C52-4F48-9FBD-E7EE73B4F340}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreaCalculation.Model", "AreaCalculation.Model\AreaCalculation.Model.csproj", "{B65FF783-D238-4207-8E6D-B1B3677224B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,14 @@ Global
 		{7F5686BB-47D5-439D-B28E-3D705FE16B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F5686BB-47D5-439D-B28E-3D705FE16B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F5686BB-47D5-439D-B28E-3D705FE16B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF063842-1C52-4F48-9FBD-E7EE73B4F340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF063842-1C52-4F48-9FBD-E7EE73B4F340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF063842-1C52-4F48-9FBD-E7EE73B4F340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF063842-1C52-4F48-9FBD-E7EE73B4F340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B65FF783-D238-4207-8E6D-B1B3677224B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B65FF783-D238-4207-8E6D-B1B3677224B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B65FF783-D238-4207-8E6D-B1B3677224B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B65FF783-D238-4207-8E6D-B1B3677224B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
