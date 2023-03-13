@@ -12,19 +12,20 @@
     <link href="css/app.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="AreaCalculation.styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" />
 
 </head>
 
 <body>
-    <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
-    </div>
-
+    <!-- <div id="app">
+         <svg class="loading-progress">
+             <circle r="40%" cx="50%" cy="50%" />
+             <circle r="40%" cx="50%" cy="50%" />
+         </svg>
+         <div class="loading-progress-text"></div>
+     </div>-->
+    <div id="app">Loading...</div>
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
@@ -52,7 +53,9 @@
     <!-- End Single Page Apps for GitHub Pages -->
     <script src="_framework/blazor.webassembly.js"></script>
     <script src="js/Triangle.js"></script>
-    
+    <script src="js/GlobalFunctions.js"></script>
+    <script src="_content/BlazorAnimate/blazorAnimateInterop.js"></script>
+
 </body>
 
 </html>

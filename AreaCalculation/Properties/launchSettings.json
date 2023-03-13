@@ -1,4 +1,10 @@
 {
+  "SENDGRID_APIKEY": "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",
+
+  "SenderEmail": "evulet2.08@gmail.com",
+  "SendGrid": {
+    "ApiKey": "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"
+  },
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
