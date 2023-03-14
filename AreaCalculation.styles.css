@@ -65,6 +65,103 @@
         transform: scale(0.9);
     }
 }
+/* /Pages/Index.razor.rz.scp.css */
+#myImg[b-g2f3rupwcl] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #myImg:hover[b-g2f3rupwcl] {
+        opacity: 0.7;
+    }
+
+#myImg[b-g2f3rupwcl] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #myImg:hover[b-g2f3rupwcl] {
+        opacity: 0.7;
+    }
+
+/* The Modal (background) */
+.modal[b-g2f3rupwcl] {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content[b-g2f3rupwcl] {
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width: 150px;
+}
+
+
+/* Caption of Modal Image */
+#caption[b-g2f3rupwcl] {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content[b-g2f3rupwcl], #caption[b-g2f3rupwcl] {
+    animation-name: zoom-b-g2f3rupwcl;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom-b-g2f3rupwcl {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close[b-g2f3rupwcl] {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .close:hover[b-g2f3rupwcl],
+    .close:focus[b-g2f3rupwcl] {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content[b-g2f3rupwcl] {
+        width: 100%;
+    }
+}
 /* /Pages/Rectangle.razor.rz.scp.css */
 #myImg[b-5ufbd2scy1] {
     border-radius: 5px;
