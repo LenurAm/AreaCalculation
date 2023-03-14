@@ -1,5 +1,115 @@
 @import '_content/Blazored.Toast/Blazored.Toast.bundle.scp.css';
 
+/* /Pages/Circle.razor.rz.scp.css */
+#myImg[b-n2iamg52la] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #myImg:hover[b-n2iamg52la] {
+        opacity: 0.7;
+    }
+
+#myImg[b-n2iamg52la] {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #myImg:hover[b-n2iamg52la] {
+        opacity: 0.7;
+    }
+
+/* The Modal (background) */
+.modal[b-n2iamg52la] {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content[b-n2iamg52la] {
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width: 700px;
+}
+
+
+/* Caption of Modal Image */
+#caption[b-n2iamg52la] {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content[b-n2iamg52la], #caption[b-n2iamg52la] {
+    animation-name: zoom-b-n2iamg52la;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom-b-n2iamg52la {
+    from {
+        transform: scale(0.1)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close[b-n2iamg52la] {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .close:hover[b-n2iamg52la],
+    .close:focus[b-n2iamg52la] {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content[b-n2iamg52la] {
+        width: 100%;
+    }
+}
+/* Container holding the image and the text */
+.container[b-n2iamg52la] {
+    
+    color: blueviolet;
+    font-size: 150%;
+   
+}
+/* Centered text */
+
+.demo[b-n2iamg52la] {
+    opacity: 0.15;
+   
+}
 /* /Pages/DisplaySpinner.razor.rz.scp.css */
 .lds-heart[b-t2bpqnwted] {
     display: inline-block;
@@ -259,6 +369,14 @@
         width: 100%;
     }
 }
+.container[b-5ufbd2scy1] {
+   
+    color: red;
+    font-size: 150%;
+}
+.demo[b-5ufbd2scy1] {
+    opacity: 0.15;
+}
 /* /Pages/Triangle.razor.rz.scp.css */
 #myImg[b-hcg31driki] {
     border-radius: 5px;
@@ -354,6 +472,15 @@
     .modal-content[b-hcg31driki] {
         width: 100%;
     }
+}
+.container[b-hcg31driki] {
+    color: forestgreen;
+    font-size: 150%;
+}
+/* Centered text */
+
+.demo[b-hcg31driki] {
+    opacity: 0.15;
 }
 
 /* /Shared/MainLayout.razor.rz.scp.css */
