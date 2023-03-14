@@ -1,7 +1,7 @@
 ﻿@page "/rectangle"
 @inject IToastService toastService
 
-@if (message == null)
+@if (rectangle == null)
 {
 	<DisplaySpinner></DisplaySpinner>
 
@@ -10,8 +10,10 @@
 <h2>Rectangle</h2>
 
 <button @onclick="changeImg">
-	<img id="myImg" class="img-fluid img-thumbnail" src="Image/rectangle.jpg" alt="Rectangle" width="300" height="200">
+	<Animate Animation="Animations.FlipRight" DurationMs=1000>
 	
+		<div><img id="myImg" class="demo img-fluid img-thumbnail" src="Image/rectangle.jpg" alt="Rectangle" width="300" height="200"><div class="container"><strong>Press on the image</strong></div></div>
+	</Animate>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<span class="close">&times;</span>
@@ -23,21 +25,29 @@
 <br />
 <br />
 <div class="row">
+	
 	<div class="col-6 border p-3">
+		<Animate Animation="Animations.ZoomOutUp" DurationMs=1000>
 		<div>
+			
+			<div>
 
-			X:<input type="number" style="width:100px" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
-		</div>
-		<br />
-		<div>
-			Y:<input type="number" style="width:100px" @bind-value=@sides[1] @bind-value:event="oninput" /><br />
+				X:<input type="number" style="width:100px" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
+			</div>
+			<br />
+			<div>
+				Y:<input type="number" style="width:100px" @bind-value=@sides[1] @bind-value:event="oninput" /><br />
 
+			</div>
 		</div>
+		</Animate>
 		<br />
 		
 	</div>
+	
 	<div class="col-6 border p-3">
-
+		<Animate Animation="Animations.FlipRight" DurationMs=1000>
+		<div>
 		<button class="btn btn-success" @onclick="CalculateRectangle">
 			<b>Calculate rectangle area</b>
 		</button>
@@ -46,7 +56,8 @@
 
 		<p role="status">Rectangle area:<br />@message</p>
 		
-
+		</div>
+		</Animate>
 	</div>
 
 </div>
@@ -64,7 +75,7 @@
 	IRectangle rectangle = Figures.GetRectangle();
 	public bool CreateRectangle()
 	{
-		if ((sides[0] == 0) && (sides[1] == 0))
+		if ((sides[0] <= 0) && (sides[1] <= 0))
 		{
 			
 			return false;
@@ -90,7 +101,7 @@
 		else
 		{
 			message = "Calculation unavailable!";
-			toastService.ShowError("Rectangle Faulty! Change sides sizes! At least one side is equal zero!");
+			toastService.ShowError("Rectangle Faulty! Change sides sizes! At least one side is equal or below zero!");
 		}
 		
 	}

@@ -39,11 +39,11 @@
     public IJSRuntime JsRuntime { get; set; }
 
     string toEmailAddress = "evulet2.08@gmail.com";
-    string subject = "sfdogihj";
-    string body = "asdfjpajef";
+    string subject = "";
+    string body = "";
     private async Task HandleValidSubmit()
     {
-       
+        
         subject = contact.Name;
         body = contact.Message;
         bool response =await SendLocalEmail(toEmailAddress, subject, body);

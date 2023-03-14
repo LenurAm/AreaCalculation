@@ -18,6 +18,9 @@ namespace Figures
 		{
 			return new Rectangle();
 		}
-
+		public static Circle Circle()
+		{
+			return new Circle();
+		}
 	}
 }

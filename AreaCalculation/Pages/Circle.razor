@@ -1,0 +1,109 @@
+﻿@page "/circle"
+@inject IToastService toastService
+
+@if (circle == null)
+{
+	<DisplaySpinner></DisplaySpinner>
+
+}
+
+<h2>Circle</h2>
+
+<button @onclick="changeImg">
+	<Animate Animation="Animations.FlipRight" DurationMs=1000>
+		<div><img id="myImg" class="demo img-fluid img-thumbnail" src="Image/circle.jpg" alt="Circle" width="300" height="300"><div class="container"><strong>Press on the image</strong></div></div>
+	</Animate>
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+		<div id="caption"></div>
+	</div>
+</button>
+<br />
+<br />
+<br />
+<div class="row">
+
+	<div class="col-6 border p-3">
+		<Animate Animation="Animations.ZoomOutUp" DurationMs=1000>
+			<div>
+
+				<div>
+
+					Radius:<input type="number" style="width:100px" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
+				</div>
+				<br />
+				
+			</div>
+		</Animate>
+		<br />
+
+	</div>
+
+	<div class="col-6 border p-3">
+		<Animate Animation="Animations.FlipRight" DurationMs=1000>
+			<div>
+				<button class="btn btn-success" @onclick="CalculateCircle">
+					<b>Calculate circle area</b>
+				</button>
+				<br />
+				<br />
+
+				<p role="status">Circle area:<br />@message</p>
+
+			</div>
+		</Animate>
+	</div>
+
+</div>
+
+@code {
+
+
+	[Inject]
+	public IJSRuntime Js { get; set; }
+
+	private double area = 1;
+	private int[] sides = new int[1];
+	string message = " ";
+
+	ICircle circle = Figures.Circle();
+	public bool CreateCircle()
+	{
+		if (sides[0] <= 0)
+		{
+
+			return false;
+		}
+
+		return true;
+	}
+	public double CalculateArea()
+	{
+		area = circle.Area(sides);
+		Console.WriteLine(area);
+		return area;
+	}
+
+	public void CalculateCircle()
+	{
+		bool result = CreateCircle();
+
+		if ((CalculateArea() > 0)&&(result))
+		{
+			message = area.ToString();
+			toastService.ShowSuccess("Circle successfully created! Get the area!");
+		}
+		else
+		{
+			message = "Calculation unavailable!";
+			toastService.ShowError("Creation Circle Fault! Change the radius size! Radius equals or below zero!");
+		}
+
+	}
+	private async Task changeImg()
+	{
+		await Js.InvokeVoidAsync("changeImg");
+	}
+}

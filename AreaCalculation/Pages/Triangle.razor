@@ -1,7 +1,7 @@
 ﻿@page "/triangle"
 @inject IToastService toastService
 
-@if(message == null)
+@if(triangle == null)
 {
     <DisplaySpinner></DisplaySpinner>
 
@@ -9,8 +9,10 @@
 <h2>Triangle</h2>
 <br />
 <button @onclick="changeImg">
-	<img id="myImg" class="img-fluid img-thumbnail" src="Image/triangle.jpg" alt="Triangle" width="300" height="200">
+	<Animate Animation="Animations.FadeRight" DurationMs=1000>
 	
+		<div><img id="myImg" class="img-fluid img-thumbnail" src="Image/triangle.jpg" alt="Triangle" width="300" height="200"><div class="container"><strong>Press on the image</strong></div></div>
+	</Animate>
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
 		<span class="close">&times;</span>
@@ -22,7 +24,9 @@
 <br />
 <br />
 <div class="row">
+
 	<div class="col-6 border p-3">
+		<Animate Animation="Animations.FadeDownRight" DurationMs=1000>
 		<div>
 			
 			X:<input type="number" style="width:100px" @bind-value=@sides[0] @bind-value:event="oninput" /><br />
@@ -37,10 +41,12 @@
 			Z:<input type="number" style="width:100px" @bind-value=@sides[2] @bind-value:event="oninput" /><br />
 
 		</div>
+		</Animate>
 		<br /><br />
 	</div>
 	<div class="col-6 border p-3">
-		
+		<Animate Animation="Animations.ZoomOut" DurationMs=1000>
+		<div>
 		<button class="btn btn-success" @onclick="CheckTriangle">
 		<b>Calculate triangle area</b></button>
 		<br /><br />
@@ -51,7 +57,8 @@
 		<p role="status">Triangle area:@message1</p>
 		<br /><br />
 		<p role="status">Has a triangle have a right corner?:<br />@message2 </p>
-		
+		</div>
+		</Animate>
 	</div>
 	
 </div>
@@ -70,8 +77,8 @@
 	ITriangle triangle = Figures.GetTriangle();
 	public bool CreateTriangle()
 	{
-		if((sides[0]==0)&&(sides[1]==0)
-				&&(sides[1]==0))
+		if((sides[0]<=0)&&(sides[1]<=0)
+				&&(sides[1]<=0))
 		{
 
 			return false;
