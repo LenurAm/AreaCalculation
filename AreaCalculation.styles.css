@@ -1,5 +1,70 @@
 @import '_content/Blazored.Toast/Blazored.Toast.bundle.scp.css';
 
+/* /Pages/DisplaySpinner.razor.rz.scp.css */
+.lds-heart[b-t2bpqnwted] {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+    transform-origin: 40px 40px;
+}
+
+    .lds-heart div[b-t2bpqnwted] {
+        top: 32px;
+        left: 32px;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background: #fff;
+        animation: lds-heart-b-t2bpqnwted 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+        .lds-heart div[b-t2bpqnwted]:after,
+        .lds-heart div[b-t2bpqnwted]:before {
+            content: " ";
+            position: absolute;
+            display: block;
+            width: 32px;
+            height: 32px;
+            background: #fff;
+        }
+
+        .lds-heart div[b-t2bpqnwted]:before {
+            left: -24px;
+            border-radius: 50% 0 0 50%;
+        }
+
+        .lds-heart div[b-t2bpqnwted]:after {
+            top: -24px;
+            border-radius: 50% 50% 0 0;
+        }
+
+@keyframes lds-heart-b-t2bpqnwted {
+    0% {
+        transform: scale(0.95);
+    }
+
+    5% {
+        transform: scale(1.1);
+    }
+
+    39% {
+        transform: scale(0.85);
+    }
+
+    45% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
 /* /Pages/Rectangle.razor.rz.scp.css */
 #myImg[b-5ufbd2scy1] {
     border-radius: 5px;
